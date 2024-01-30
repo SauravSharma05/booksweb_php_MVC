@@ -17,8 +17,8 @@
     <a href="#" class="menu-link w-nav-link">Shop</a>
 
     <a href="#" id="Blog" class="menu-link w-nav-link">Blog</a>
-    <a href="/register" id="Blog" class="menu-link w-nav-link">Register</a>
-    <a href="/login" id="Blog" class="menu-link w-nav-link">Login</a>
+    <a href="register" id="Blog" class="menu-link w-nav-link">Register</a>
+    <a href="login" id="Blog" class="menu-link w-nav-link">Login</a>
     
     <!-- <div data-hover="false" data-delay="0" class="header-dropdown w-dropdown">
     <div class="menu-link w-dropdown-toggle"><div class="nav-link-text">Register</div><div class="header-nav-link-icon w-icon-dropdown-toggle"></div></div>

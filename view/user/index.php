@@ -6,7 +6,7 @@
 
 <link rel="stylesheet" href="../../assets/userside/css/style.css">
 
-<script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64f6abec0acbfc277d64319a_Favicon_32x32.png" rel="shortcut icon" type="image/x-icon"/><link href="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64f6ac02d0eaf3fefc7ec7b5_webclip_256x256.png" rel="apple-touch-icon"/><script type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = {"currencyCode":"USD","symbol":"$","decimal":".","fractionDigits":2,"group":",","template":"{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}","hideDecimalForWholeNumbers":false};</script></head><body><main class="page-wrapper">
+</head><body><main class="page-wrapper">
     
 
     
