@@ -10,14 +10,12 @@ class controller extends model
             switch ($url) 
             {
                 case '/index':   
-                    // print_r($_SERVER);
-                   
+
                      include "../../view/user/header.php";
                      include "../../view/user/index.php";
                      include "../../view/user/footer.php";
-                     // include "index.php";
                      break;
-                     
+                    
                      case '/register':
                         if(isset($_REQUEST['submit']))
                         {
@@ -25,8 +23,9 @@ class controller extends model
                             $address= $_REQUEST['address'];
                             $email= $_REQUEST['email'];
                             $password= $_REQUEST['password'];
+
                             
-                            $data = array(
+                                $data = array(
                                 "name" => $name,
                                 "email" => $email,
                                 "address" => $address,

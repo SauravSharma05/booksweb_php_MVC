@@ -5,19 +5,14 @@
 
 </head>
     <h1><a href="index">HOME</a></h1>
-<main>
-    
+<main>  
     <div class="left-section">
       <p>BOOKSWEB</p>
-      <h1>Register first</h1>
-    </div>
+      <h1>Register first</h1></div>
     <div class="right-section">
-
       <div class="header">
         <h1>Register</h1>
-        <p>to get more details about movie</p>
-      </div>
-
+        <p>to get more details about movie</p></div>
       <div class="form-container">
         <form action="" method="post">
           <div class="form-group">
@@ -52,7 +47,5 @@
             </div>
         </div>
         <p>already have an account</p><a href="login">login here</a>
-        </form>
-      </div>
-    </div>
+        </form></div></div>
   </main>
