@@ -9,11 +9,9 @@ class controller extends model
             model::__construct();
             switch ($url) 
             {
-                case '/index':   
+                case '/dashh':   
 
-                     include "../../view/user/header.php";
-                     include "../../view/user/index.php";
-                     include "../../view/user/footer.php";
+                     include "../../view/admin/index.php";
                      break;
                     
                      case '/register':
@@ -64,8 +62,8 @@ class controller extends model
                     if(isset($_REQUEST['del']))
                     {   
                         $id = $_REQUEST['del'];
-                        // $this->delete('user',$id);
-                        header('location:userdata');
+                        $this->delete('users',$id);
+                        header('location:userlist');
                     }
                     $userdata = $this->show("users");
                     include 'userlist.php';

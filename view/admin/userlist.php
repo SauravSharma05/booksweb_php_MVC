@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
-<!-- Mirrored from demos.wrappixel.com/free-admin-templates/bootstrap/materialpro-bootstrap-free/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Dec 2023 14:04:08 GMT -->
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -160,7 +158,6 @@
                 </form>
               </li>
             </ul>
-
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
             <!-- ============================================================== -->
@@ -293,111 +290,47 @@
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      Dashboard
-                    </li>
                   </ol>
                 </nav>
               </div>
             </div>
-
           </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Container fluid  -->
-        <!-- ============================================================== -->
         <div class="container-fluid">
-          <!-- ============================================================== -->
-          <!-- Sales chart -->
-          <!-- ============================================================== -->
           <div class="row">
-            <!-- Column -->
-
             <!-- userlist -->
             <div class="col-lg-8">
-  <?php 
+<div class="card">
+                <div class="card-body">
+                 <div class="table-responsive">
+                    <table class="table user-table">
+                      <thead>
+                        <tr>
+                          <th class="border-top-0">user_id</th>
+                          <th class="border-top-0">Name</th>
+                          <th class="border-top-0">Address</th>
+                          <th class="border-top-0">Email</th>
+                          <th class="border-top-0">Action</th>
+                        </tr>
+                      </thead>
+                      <?php
         if($userdata)
         {
-          foreach ($userdata as $key => $value) {
-            echo "Name : ".$value->name."<br>";
-            echo "Address : ".$value->address."<br>";
-            echo "Email : ".$value->email."<br><br>";
-          }
-        }
-  
-  
-  
-  ?>
-           
-        
-        
-            </div>
-            <div class="col-lg-4">
-              <div    iv class="card">
-                <div class="card-body">
-                  <h3 class="card-title">Our Visitors</h3>
-                  <h6 class="card-subtitle">Different Devices Used to Visit</h6>
-                  <div
-                    id="visitor"
-                    style="
-                      height: 290px;
-                      width: 100%;
-                      max-height: 290px;
-                      position: relative;
-                    "
-                    class="c3"
-                  >
-                    <div
-                      class="c3-tooltip-container"
-                      style="
-                        position: absolute;
-                        pointer-events: none;
-                        display: none;
-                      "
-                    ></div>
+          foreach ($userdata as $key => $value) { ?>
+                      <tbody>
+                        <tr>
+                          <td><?php echo $value->user_id ?></td>
+                          <td><?php echo $value->name ?></td>
+                          <td><?php echo $value->address ?></td>
+                          <td><?php echo $value->email ?></td>
+                          <form action="" method="post">
+                            <td><button type="submit" name="del" value="<?php echo $value->user_id ?>">delete</button></td>
+                          </form>
+                        </tr>
+          <?php }}?>             
+                      </tbody>
+                    </table>
                   </div>
-                </div>
-                <div>
-                  <hr class="mt-0 mb-0" />
-                </div>
-                <div class="card-body text-center">
-                  <ul
-                    class="
-                      list-inline
-                      d-flex
-                      justify-content-center
-                      align-items-center
-                      mb-0
-                    "
-                  >
-                    <li class="me-4">
-                      <h6 class="text-info">
-                        <i
-                          class="mdi mdi-checkbox-blank-circle font-10 me-2"
-                        ></i
-                        >Mobile
-                      </h6>
-                    </li>
-                    <li class="me-4">
-                      <h6 class="text-primary">
-                        <i
-                          class="mdi mdi-checkbox-blank-circle font-10 me-2"
-                        ></i
-                        >Desktop
-                      </h6>
-                    </li>
-                    <li class="me-4">
-                      <h6 class="text-success">
-                        <i
-                          class="mdi mdi-checkbox-blank-circle font-10 me-2"
-                        ></i
-                        >Tablet
-                      </h6>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -428,8 +361,8 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            Propertico
-                <a href="dashh">Propertico </a>
+            Booksweb
+                <a href="dashh">Booksweb </a>
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
