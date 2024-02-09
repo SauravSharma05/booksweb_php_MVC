@@ -46,18 +46,16 @@ class controller extends model
                                 // );
                                 $data = $_REQUEST;
                                 $user_detail =    $this->login($data);
-        
                                 // require_once("view/login.php");
                                 // break;
                                 // $this->show('users',$data);
                             }
-                        
                             include "../../view/user/login.php";
                             break;
     
 
                 case '/userlist':
-        
+                
                     // $userdata = $this->show('user');
                     if(isset($_REQUEST['del']))
                     {   
@@ -65,6 +63,28 @@ class controller extends model
                         $this->delete('users',$id);
                         header('location:userlist');
                     }
+                     else if(isset($_REQUEST['update']))
+                        {   
+                            
+                            $id = $_REQUEST['update'];
+                            $data = $this->showwhere('users',$id);
+                            // print_r($data);
+                            // exit;
+                            if(isset($_REQUEST['updatedata']))
+                            {   
+                                
+                                $data = array(
+                                    "name"=>$_REQUEST["name"],
+                                    "email"=>$_REQUEST["email"],
+                                    "address"=>$_REQUEST["address"],
+                         );
+                            $response = $this->update("users",$data,$id);
+                            header("location:userlist");    
+                        }
+
+                            include "updateuser.php";
+                            exit;
+                        }
                     $userdata = $this->show("users");
                     include 'userlist.php';
                     break;

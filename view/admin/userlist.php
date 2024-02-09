@@ -43,6 +43,10 @@
     <link href="https://demos.wrappixel.com/free-admin-templates/bootstrap/materialpro-bootstrap-free/assets/plugins/c3-master/c3.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="https://demos.wrappixel.com/free-admin-templates/bootstrap/materialpro-bootstrap-free/html/css/style.min.css" rel="stylesheet" />
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
 
   <body>
@@ -326,6 +330,19 @@
                           <form action="" method="post">
                             <td><button type="submit" name="del" value="<?php echo $value->user_id ?>">delete</button></td>
                           </form>
+                          
+                          <!-- <td> -->
+                            <form action="" method="post">
+                                <td><button type="submit" name="update" value="<?php echo $value->user_id ?>" class="btn btn-primary" data-target="#exampleModal" data-toggle="modal">update</button></td>
+                              <!-- <button type="button" name="update1" value="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
+                                <!-- Update1
+                              </button> -->
+                            </form>
+                            <!-- </td> -->
+
+                          <!-- <form action="" method="post">
+                            <td><button type="submit" name="upd" value="">update</button></td>
+                          </form> -->
                         </tr>
           <?php }}?>             
                       </tbody>
@@ -335,6 +352,74 @@
               </div>
             </div>
           </div>
+          
+          <!-- modal -->
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Update page</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <!-- update form -->
+                <main>  
+    <div class="left-section">
+      <p>Update</p>
+    <div class="right-section">
+      <div class="header">
+      <div class="form-container">
+      
+        <form action="" method="post">
+          <div class="form-group">
+            <span>Name</span>
+            <div class="input-box">
+              <input type="text" name="name" value="<?php echo $value->name ?>" />
+            </div>
+          </div>
+          <div class="form-group">
+            <span>Email</span>
+            <div class="input-box">
+              <input type="email" name="email" placeholder="example@gmail.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <span>Password</span>
+            <div class="input-box">
+              <input type="password" name="password" placeholder="enter password here" />
+            </div>
+          </div>
+          <div class="form-group">
+            <span for="address">Address</span>
+            <div class="input-box">
+              <input type="text" name="address" placeholder="Enter your address" />
+            </div>
+          </div>
+          <div class="form-group">
+            <span></span>
+            <!-- <div class="btn-box">
+              <button type="reset" class="btn-reset">Reset</button>
+              <button type="submit" class="btn-submit" name="submit">Submit</button>
+            </div> -->
+        </div>
+        <!-- <p>already have an account</p><a href="login">login here</a> -->
+      </form>
+    </div></div>
+    
+  </main>
+  
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary">Save changes</button>
+</div>   
+</div>
+</div>
+</div>
+
           <!-- ============================================================== -->
           <!-- Sales chart -->
           <!-- ============================================================== -->
@@ -398,6 +483,12 @@
     <!--Custom JavaScript -->
     <script src="https://demos.wrappixel.com/free-admin-templates/bootstrap/materialpro-bootstrap-free/html/js/pages/dashboards/dashboard1.js"></script>
     <script src="https://demos.wrappixel.com/free-admin-templates/bootstrap/materialpro-bootstrap-free/html/js/custom.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 
 <!-- Mirrored from demos.wrappixel.com/free-admin-templates/bootstrap/materialpro-bootstrap-free/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Dec 2023 14:04:08 GMT -->

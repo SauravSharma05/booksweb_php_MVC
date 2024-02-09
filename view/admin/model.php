@@ -40,7 +40,7 @@ class model
         }
         public function showwhere($table,$id)
         {
-            $sql = "SELECT * FROM $table where id=$id";
+            $sql = "SELECT * FROM $table where user_id=$id";
             $data = $this->connection->query($sql);
             if($data->num_rows>0)
             {

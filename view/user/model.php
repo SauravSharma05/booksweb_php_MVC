@@ -40,7 +40,7 @@ class model
         }
         public function showwhere($table,$id)
         {
-            $sql = "SELECT * FROM $table where id=$id";
+            $sql = "SELECT * FROM $table where user_id=$id";
             $data = $this->connection->query($sql);
             if($data->num_rows>0)
             {
@@ -74,8 +74,8 @@ public function login($data)
      
         if($userdata->role_as == 1)
         {
-            echo "Admin side";
-            header("location:admin-dashboard");
+            // echo "Admin side";
+            header("location:../admin/dashh");
         }
         else
         {

@@ -346,8 +346,8 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            Propertico
-                <a href="dashh">Propertico </a>
+            Booksweb
+                <a href="dashh">Booksweb </a>
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
