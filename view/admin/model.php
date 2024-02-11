@@ -59,8 +59,9 @@ class model
             $SQL .= " $key = '$value' , ";
         }
         $SQL = rtrim($SQL," , ");
-        $SQL .= " WHERE id = $id";
+        $SQL .= " WHERE user_id = $id";
         $sqlex = $this->connection->query($SQL);
+        
 }
 public function login($data)
 {

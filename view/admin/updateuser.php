@@ -47,11 +47,11 @@
 </head>
 <body>
             <hr>
-                <a href="index">BACK TO HOME</a>
+                <a href="dashh">BACK TO HOME</a>
             <hr>
         <fieldset>
             <legend>update user form</legend>
-            <form action="userlist" enctype="multipart/form-data" method="post">
+            <form action="" enctype="multipart/form-data" method="post">
 
                 <?php 
                 if(isset($data))

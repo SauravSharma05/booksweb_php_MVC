@@ -1,5 +1,4 @@
 <?php 
-
 include "model.php";
 class controller extends model
 {
@@ -10,52 +9,10 @@ class controller extends model
             switch ($url) 
             {
                 case '/dashh':   
-
                      include "../../view/admin/index.php";
                      break;
-                    
-                     case '/register':
-                        if(isset($_REQUEST['submit']))
-                        {
-                            $name= $_REQUEST['name'];
-                            $address= $_REQUEST['address'];
-                            $email= $_REQUEST['email'];
-                            $password= $_REQUEST['password'];
-
-                            
-                                $data = array(
-                                "name" => $name,
-                                "email" => $email,
-                                "address" => $address,
-                                "password" => $password,
-                            );
-                            $this->insert('users',$data);
-                            header('location:login');
-                        }
-                        include "../../view/user/register.php";
-                        break;
-                        
-                        case '/login':
-                            if(isset($_REQUEST['log']))
-                            {
-                                // $email= $_REQUEST['email'];
-                                // $password= $_REQUEST['password'];
-                                // $data = array(
-                                //     "email" => $email,
-                                //     "password" => $password,
-                                // );
-                                $data = $_REQUEST;
-                                $user_detail =    $this->login($data);
-                                // require_once("view/login.php");
-                                // break;
-                                // $this->show('users',$data);
-                            }
-                            include "../../view/user/login.php";
-                            break;
-    
-
-                case '/userlist':
-                
+                       
+                case '/userlist':                
                     // $userdata = $this->show('user');
                     if(isset($_REQUEST['del']))
                     {   
@@ -63,69 +20,35 @@ class controller extends model
                         $this->delete('users',$id);
                         header('location:userlist');
                     }
-                     else if(isset($_REQUEST['update']))
-                        {   
-                            
-                            $id = $_REQUEST['update'];
-                            $data = $this->showwhere('users',$id);
-                            // print_r($data);
-                            // exit;
-                            if(isset($_REQUEST['updatedata']))
-                            {   
-                                
-                                $data = array(
-                                    "name"=>$_REQUEST["name"],
-                                    "email"=>$_REQUEST["email"],
-                                    "address"=>$_REQUEST["address"],
-                         );
-                            $response = $this->update("users",$data,$id);
-                            header("location:userlist");    
-                        }
-
-                            include "updateuser.php";
-                            exit;
+                    else if(isset($_REQUEST['update']))
+                    {                             
+                        header("location:updateuser");    
                         }
                     $userdata = $this->show("users");
                     include 'userlist.php';
                     break;
-                    
+
                     case '/updateuser':
-                        if(isset($_REQUEST['upd']))
-                        {   
-                            $id = $_REQUEST['upd'];
-                            // echo $id;
-                            // $data = $this->showwhere('user',$id);
-                        
-                            include "updateuser.php";
-                        }
-                        else if (isset($_REQUEST['updatedata']))
+                        if(isset($_REQUEST['update']))
                         {
-                            if($_FILES['image']['error'] == 0  )
-                            {
-                                $image = "images/".time().$_FILES['image']['name'];
-                                move_uploaded_file($_FILES['image']['tmp_name'],$image);
-                                }
-                            else
-                            {
-                               $image = $_REQUEST["image"];
-                            }
+                            $id = $_REQUEST['update'];    
+                            $data = $this->showwhere('users',$id);
+                        }
+                        if(isset($_REQUEST['updatedata']))
+                        {             
+                            $id= $_REQUEST['updatedata']; 
                             $data = array(
                                 "name"=>$_REQUEST["name"],
                                 "email"=>$_REQUEST["email"],
                                 "address"=>$_REQUEST["address"],
-                                "gender"=>$_REQUEST["gender"],
-                                // "hobby"=>$_REQUEST["hobby"],
-                                // "password"=>$_REQUEST["password"],
-                                "image" => $image 
-                         );
-                            // $response =$this->update("user",$data ,$_REQUEST["updatedata"]);
-                            header("location:userdata");    
+                            );
+                            $response = $this->update("users",$data,$id);
+                            header("location:userlist");    
                         }
-                        break;              
+                        include 'updateuser.php';
+                        break;
             }
         }
 }
-
 $obj = new controller;
-
 ?>

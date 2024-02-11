@@ -332,8 +332,8 @@
                           </form>
                           
                           <!-- <td> -->
-                            <form action="" method="post">
-                                <td><button type="submit" name="update" value="<?php echo $value->user_id ?>" class="btn btn-primary" data-target="#exampleModal" data-toggle="modal">update</button></td>
+                            <form action="updateuser" method="post">
+                                <td><button type="submit" name="update" value="<?php echo $value->user_id ?>" class="btn btn-primary" >update</button></td>
                               <!-- <button type="button" name="update1" value="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
                                 <!-- Update1
                               </button> -->
