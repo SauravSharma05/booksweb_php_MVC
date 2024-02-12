@@ -3,14 +3,16 @@
 include "model.php";
 class controller extends model
 {
-        public function __construct()
-        {
+    public function __construct()
+    {
             $url = $_SERVER['PATH_INFO'];
             model::__construct();
             switch ($url) 
             {
                 case '/index':   
 
+
+                    $data = $this->show('books');
                      include "../../view/user/header.php";
                      include "../../view/user/index.php";
                      include "../../view/user/footer.php";
