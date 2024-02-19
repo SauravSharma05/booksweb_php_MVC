@@ -218,10 +218,10 @@
               <li class="sidebar-item">
                 <a
                   class="sidebar-link waves-effect waves-dark sidebar-link"
-                  href="dashh"
+                  href="addbook"
                   aria-expanded="false"
                 >
-                  <span class="hide-menu">Profile</span></a
+                  <span class="hide-menu">Add books</span></a
                 >
               </li>
               <li class="sidebar-item">
@@ -230,6 +230,14 @@
                   href="userlist"
                   aria-expanded="false"
                   ><span class="hide-menu">UserList</span></a
+                >
+              </li>
+              <li class="sidebar-item">
+                <a
+                  class="sidebar-link waves-effect waves-dark sidebar-link"
+                  href="booklist"
+                  aria-expanded="false"
+                  ><span class="hide-menu">Book List</span></a
                 >
               </li>
             </ul>

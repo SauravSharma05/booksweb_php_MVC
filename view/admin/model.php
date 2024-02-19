@@ -17,7 +17,8 @@ class model
 
             $sql  = "INSERT INTO $table ($arr1) VALUES ('$val1')";
             // echo $sql;
-            $this->connection->query($sql);
+            $added = $this->connection->query($sql);
+            return $added;
         }
         public function show($table)
         {

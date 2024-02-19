@@ -320,21 +320,23 @@
                         <tr>
                           <th class="border-top-0">user_id</th>
                           <th class="border-top-0">Name</th>
-                          <th class="border-top-0">Address</th>
-                          <th class="border-top-0">Email</th>
+                          <th class="border-top-0">Author name</th>
+                          <th class="border-top-0">Price</th>
+                          <th class="border-top-0">Description</th>
                           <th class="border-top-0">Action</th>
                         </tr>
                       </thead>
                       <?php
-        if($userdata)
+        if($booksdata)
         {
-          foreach ($userdata as $key => $value) { ?>
+          foreach ($booksdata as $key => $value) { ?>
                       <tbody>
                         <tr>
-                          <td><?php echo $value->user_id ?></td>
+                          <td><?php echo $value->book_id ?></td>
                           <td><?php echo $value->name ?></td>
-                          <td><?php echo $value->address ?></td>
-                          <td><?php echo $value->email ?></td>
+                          <td><?php echo $value->author ?></td>
+                          <td><?php echo $value->price ?></td>
+                          <td><?php echo $value->description ?></td>
                           <form action="" method="post">
                             <td><button type="submit" name="del" value="<?php echo $value->user_id ?>">delete</button></td>
                           </form>

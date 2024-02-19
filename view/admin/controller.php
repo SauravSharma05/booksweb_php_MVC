@@ -13,8 +13,8 @@ class controller extends model
                      break;
                        
                 case '/userlist':                
-                    // $userdata = $this->show('user');
-                    if(isset($_REQUEST['del']))
+                    // $userdata = $this->show('user');     //debugging
+                    if(isset($_REQUEST['del']))             //delete user data
                     {   
                         $id = $_REQUEST['del'];
                         $this->delete('users',$id);
@@ -27,6 +27,45 @@ class controller extends model
                     $userdata = $this->show("users");
                     include 'userlist.php';
                     break;
+                case '/booklist':                
+                    // $userdata = $this->show('user');     //debugging
+                    if(isset($_REQUEST['del']))             //delete user data
+                    {   
+                        $id = $_REQUEST['del'];
+                        $this->delete('users',$id);
+                        header('location:userlist');
+                    }
+                    else if(isset($_REQUEST['update']))
+                    {                             
+                        header("location:updateuser");    
+                        }
+                    $booksdata = $this->show("books");
+                    include 'booklist.php';
+                    break;
+
+                    case '/addbook':
+                        if(isset($_REQUEST['submit']))
+                        {
+                            $name= $_REQUEST['name'];
+                            $price= $_REQUEST['price'];
+                            $description= $_REQUEST['description'];
+                            $author= $_REQUEST['author'];
+
+                                $data = array(
+                                "name" => $name,
+                                "price" => $price,
+                                "description" => $description,
+                                "author" => $author,
+                            );
+                            $added = $this->insert('books',$data);
+                            if($added)
+                            {
+                               echo "<script> alert('book added successfully') </script>";
+                            }
+                            // header('location:dashh');
+                        }
+                        include "../../view/admin/addbooks.php";
+                        break;
 
                     case '/updateuser':
                         if(isset($_REQUEST['update']))
@@ -42,7 +81,7 @@ class controller extends model
                                 "email"=>$_REQUEST["email"],
                                 "address"=>$_REQUEST["address"],
                             );
-                            $response = $this->update("users",$data,$id);
+                            $response = $this->update("users",$data,$id);               //update user data
                             header("location:userlist");    
                         }
                         include 'updateuser.php';
