@@ -32,10 +32,10 @@ class controller extends model
                     if(isset($_REQUEST['del']))             //delete user data
                     {   
                         $id = $_REQUEST['del'];
-                        $this->delete('users',$id);
-                        header('location:userlist');
+                        $this->delete('books',$id);
+                        header('location:booklist');
                     }
-                    else if(isset($_REQUEST['update']))
+                    else if(isset($_REQUEST['update']))     // work in progress
                     {                             
                         header("location:updateuser");    
                         }
@@ -44,8 +44,15 @@ class controller extends model
                     break;
 
                     case '/addbook':
+
                         if(isset($_REQUEST['submit']))
                         {
+                            
+                            $file = $_FILES['image']['tmp_name'];
+                            // C:\xampp\htdocs\booksweb\booksweb_php_MVC\assets\userside\images
+                            $loc = "../../assets/userside/images/".time().$_FILES['image']['name'];
+                            move_uploaded_file($file,$loc);
+
                             $name= $_REQUEST['name'];
                             $price= $_REQUEST['price'];
                             $description= $_REQUEST['description'];
@@ -56,6 +63,7 @@ class controller extends model
                                 "price" => $price,
                                 "description" => $description,
                                 "author" => $author,
+                                "image" => $loc,
                             );
                             $added = $this->insert('books',$data);
                             if($added)

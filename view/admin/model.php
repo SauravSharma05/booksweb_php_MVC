@@ -36,7 +36,7 @@ class model
         public function delete($table, $id)
         {
             
-            $sql = "DELETE FROM $table WHERE user_id = $id";
+            $sql = "DELETE FROM $table WHERE book_id = $id";
             $this->connection->query($sql);
         }
         public function showwhere($table,$id)

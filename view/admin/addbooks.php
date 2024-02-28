@@ -320,7 +320,7 @@
 
         <!-- addbooks form -->
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <span>Name of book</span>
             <div class="input-box">
@@ -343,6 +343,12 @@
             <span>description</span>
             <div class="input-box">
               <textarea name="description" id="" cols="30" rows="10">enter book description here</textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <span>image of book</span>
+            <div class="input-box">
+              <input type="file" name="image" id="">
             </div>
           </div>
           <div class="form-group">

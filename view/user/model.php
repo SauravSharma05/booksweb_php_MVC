@@ -27,10 +27,10 @@ class model
             {
                 while ($datas = mysqli_fetch_object($data)) 
                 {
-                        $userdata[] = $datas; 
+                        $bookdata[] = $datas; 
                 }
             }
-            return $userdata;
+            return $bookdata;
         }
         public function delete($table, $id)
         {

@@ -319,6 +319,7 @@
                       <thead>
                         <tr>
                           <th class="border-top-0">user_id</th>
+                          <th class="border-top-0">Book Image</th>
                           <th class="border-top-0">Name</th>
                           <th class="border-top-0">Author name</th>
                           <th class="border-top-0">Price</th>
@@ -333,12 +334,13 @@
                       <tbody>
                         <tr>
                           <td><?php echo $value->book_id ?></td>
+                          <td><img height="100px" width="100px" src="<?php echo $value->image ?>" alt=""></td>
                           <td><?php echo $value->name ?></td>
                           <td><?php echo $value->author ?></td>
                           <td><?php echo $value->price ?></td>
                           <td><?php echo $value->description ?></td>
                           <form action="" method="post">
-                            <td><button type="submit" name="del" value="<?php echo $value->user_id ?>">delete</button></td>
+                            <td><button type="submit" name="del" value="<?php echo $value->book_id ?>">delete</button></td>
                           </form>
                           
                           <!-- <td> -->

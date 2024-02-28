@@ -21,8 +21,13 @@
     <div role="listitem" class="author-book-item w-dyn-item">
       <?php  
       foreach ($data as $value) {
+      
           ?>
-    <div class="author-book-content-wrap"><div class="author-book-image-block"><a href="/product/soldier-by-olivia-wilson" class="author-book-image-link w-inline-block"><img alt="Author Book Image" loading="lazy" src="https://assets-global.website-files.com/64bdf2da73f4d7db826dcce3/64c8de232b56254d6ee172e4_soldier-by-olivia-wilson.jpg" class="author-book-image"/></a></div><div data-w-id="2194af11-422a-9883-22b3-a4e717b9f72f" style="opacity:0" class="author-book-content"><a href="/product/soldier-by-olivia-wilson" class="author-book-title"><?php echo $value->name;?></a><div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="book-rate"><?php echo $value->price;?></div><p class="author-book-description"><?php echo $value->description;?></p><div class="author-trainer-block"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64ca160c5e259ddd4b243fca_bule_bg-checkmark.png" loading="lazy" alt="Check Mark" class="check-mark-icon"/><div class="author-book-trainer-title"><?php echo $value->author;?></div></div>
+    <div class="author-book-content-wrap"><div class="author-book-image-block">
+        <a href="/product/soldier-by-olivia-wilson" class="author-book-image-link w-inline-block">
+        <img alt="Author Book Image" loading="lazy" src="<?php echo $value->image; ?>" class="author-book-image"/>
+        </a>
+</div><div data-w-id="2194af11-422a-9883-22b3-a4e717b9f72f" style="opacity:0" class="author-book-content"><a href="/product/soldier-by-olivia-wilson" class="author-book-title"><?php echo $value->name;?></a><div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="book-rate"><?php echo $value->price;?></div><p class="author-book-description"><?php echo $value->description;?></p><div class="author-trainer-block"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64ca160c5e259ddd4b243fca_bule_bg-checkmark.png" loading="lazy" alt="Check Mark" class="check-mark-icon"/><div class="author-book-trainer-title"><?php echo $value->author;?></div></div>
         
         <a href="/product/soldier-by-olivia-wilson" class="author-book-order-button w-button">Order now</a></div></div>
         <br>
