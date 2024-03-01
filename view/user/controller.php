@@ -11,7 +11,9 @@ class controller extends model
             {
                     case '/index':           
                     
-                    $data = $this->show('books');
+                    // $data = $this->show('books');
+                    $booksdata = $this->join_book_cat();
+                    
                     include "../../view/user/header.php";
                     include "../../view/user/index.php";
                     include "../../view/user/footer.php";
@@ -41,12 +43,45 @@ class controller extends model
 
                             if(isset($_REQUEST['log']))
                             {
-                               
+                                $email = $_REQUEST['email'];
                                 $data = $_REQUEST;
-                                $user_detail =    $this->login($data);
+                                $userdata =    $this->login($data);
+                                echo "<pre>";
+                                print_r($userdata);
+                                exit;
+
+                                // $data = $this->showwhere('users',$id);
+                                if($user_detail)
+                                {   
+
+                                    $_SESSION['user_id'] = $user_id;
+                                    setcookie ("email",$email,time()+ 3600);
+                                }
+
                             }
                             include "../../view/user/login.php";
                             break;
+
+                        case '/productpage':
+                        
+                        if(isset($_REQUEST['sub']))
+                        {
+                            $id = $_REQUEST['sub'];
+                            // echo $id;
+                            $data = $this->showwhere('books',$id);
+                        }
+                        if(isset($_REQUEST['adc']))
+                        {
+                            $id = $_REQUEST['adc'];
+                            // echo $id;
+                            $data = $this->showwhere('books',$id);
+                            echo "<pre>";
+                            print_r($data);
+                            exit;
+                        }
+
+                        include 'productpage.php';
+                        break;
                  
             }
         }

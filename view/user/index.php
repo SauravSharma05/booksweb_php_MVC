@@ -7,9 +7,7 @@
 <link rel="stylesheet" href="../../assets/userside/css/style.css">
 
 </head><body><main class="page-wrapper">
-    
 
-    
     <div class="main-wrapper"><section class="hero-section hero-bg"><div class="w-layout-blockcontainer container w-container">
 
     <!-- <div class="hero-wrapper"><div class="hero-content"><div data-w-id="8c8a150b-a478-9ef8-1e35-8e580ecfcc19" style="opacity:0" class="hero-subtitle">By bestseller author</div><h1 data-w-id="50d0e299-fa01-f1f1-680f-10f64211c71e" style="opacity:0" class="heading hero-heading">Meet your next favorite book</h1><a data-w-id="c5a4a91a-43c7-640d-5fa8-248322cccb86" style="opacity:0" href="/shop" class="button-default primary-bg w-button">Buy our book</a><div class="add-block"><div class="add-image-wrapper"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64bb5ba64e3f4165f1e99372_Audible_logo%201.png" loading="lazy" alt="Add Image"/></div><div class="add-image-wrapper"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64bb5ba66decd233609f8ad1_Amazon_logo%201.png" loading="lazy" alt="Add Image"/></div><div class="add-image-wrapper"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64bb5ba74e3f4165f1e993ba_Google_Books_logo_2020%201.png" loading="lazy" alt="Add Image"/></div></div></div><div data-w-id="8c4de820-ccc5-7a1a-0549-f2cb62f1f8d4" style="opacity:0" class="hero-image-block"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64b91982ebe4a1692ff5fcdc_hero-image.png" loading="lazy" data-w-id="7248049f-c775-d712-62d0-3f0106d29e21" sizes="(max-width: 479px) 100vw, (max-width: 767px) 63vw, (max-width: 991px) 400px, (max-width: 1279px) 510px, 623px" alt="Hero Image" srcset="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64b91982ebe4a1692ff5fcdc_hero-image-p-500.png 500w, https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64b91982ebe4a1692ff5fcdc_hero-image.png 623w" class="hero-image"/></div></div></div></section>
@@ -20,16 +18,21 @@
     <div class="author-book-collection-list-wrapper w-dyn-list"><div role="list" class="author-book-collection-list w-dyn-items">
     <div role="listitem" class="author-book-item w-dyn-item">
       <?php  
-      foreach ($data as $value) {
-      
+      foreach ($booksdata as $value) {
           ?>
+          
     <div class="author-book-content-wrap"><div class="author-book-image-block">
         <a href="/product/soldier-by-olivia-wilson" class="author-book-image-link w-inline-block">
         <img alt="Author Book Image" loading="lazy" src="<?php echo $value->image; ?>" class="author-book-image"/>
         </a>
-</div><div data-w-id="2194af11-422a-9883-22b3-a4e717b9f72f" style="opacity:0" class="author-book-content"><a href="/product/soldier-by-olivia-wilson" class="author-book-title"><?php echo $value->name;?></a><div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="book-rate"><?php echo $value->price;?></div><p class="author-book-description"><?php echo $value->description;?></p><div class="author-trainer-block"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64ca160c5e259ddd4b243fca_bule_bg-checkmark.png" loading="lazy" alt="Check Mark" class="check-mark-icon"/><div class="author-book-trainer-title"><?php echo $value->author;?></div></div>
-        
-        <a href="/product/soldier-by-olivia-wilson" class="author-book-order-button w-button">Order now</a></div></div>
+</div>
+<div data-w-id="2194af11-422a-9883-22b3-a4e717b9f72f" style="opacity:0" class="author-book-content"><a href="/product/soldier-by-olivia-wilson" class="author-book-title"><?php echo $value->name;?></a><div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D" class="book-rate"><?php echo $value->price;?></div><p class="author-book-description"><?php echo $value->description;?></p><div class="author-trainer-block"><img src="https://assets-global.website-files.com/64b8bca09e0474df27fcc6a9/64ca160c5e259ddd4b243fca_bule_bg-checkmark.png" loading="lazy" alt="Check Mark" class="check-mark-icon"/><div class="author-book-trainer-title"><?php echo $value->author;?></div></div>
+        <div class="div"><?php echo $value->cat_name;?></div>
+        <!-- <a href="/productpage?prd_id=">order here</a> -->
+        <form action="productpage" method="post">
+            <button type="submit" name="sub" value="<?php echo  $value->book_id ?>">order here</button>
+        </form>
+        <!-- <a href="/productpage?prd_id=" class="author-book-order-button w-button">Order now</a></div></div> -->
         <br>
           <?php }
            ?>  

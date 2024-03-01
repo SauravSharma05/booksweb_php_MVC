@@ -32,6 +32,29 @@ class model
             }
             return $bookdata;
         }
+
+        public function join_book_cat()
+        {
+            // SELECT columns  
+            // FROM table1   
+            // INNER JOIN table2  
+            // ON table1.column = table2.column;  
+
+            $sql = "SELECT books.name,books.book_id, books.author,books.price,books.image,books.description, book_cat.cat_name FROM books INNER JOIN book_cat ON books.cat_id = book_cat.cat_id; ";
+            
+            $data = $this->connection->query($sql);
+            if($data->num_rows>0)
+            {
+                while ($datas = mysqli_fetch_object($data)) 
+                {
+                        $booksdata[] = $datas; 
+                }
+            }
+            return $booksdata;
+
+
+        }
+
         public function delete($table, $id)
         {
             
@@ -40,7 +63,7 @@ class model
         }
         public function showwhere($table,$id)
         {
-            $sql = "SELECT * FROM $table where user_id=$id";
+            $sql = "SELECT * FROM $table where book_id=$id";
             $data = $this->connection->query($sql);
             if($data->num_rows>0)
             {
@@ -75,11 +98,11 @@ public function login($data)
         if($userdata->role_as == 1)
         {
             // echo "Admin side";
-            header("location:../admin/dashh");
+            // header("location:../admin/dashh");
         }
         else
         {
-            header("location:index");
+            // header("location:index");
         }
     }
     else
@@ -91,6 +114,7 @@ public function login($data)
     {
         // echo "inside else";
       }
+      return $userdata;
 }
 
 }

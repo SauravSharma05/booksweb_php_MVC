@@ -8,7 +8,7 @@ class controller extends model
             model::__construct();
             switch ($url) 
             {
-                case '/dashh':   
+                case '/index':   
                      include "../../view/admin/index.php";
                      break;
                        
