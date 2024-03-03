@@ -46,16 +46,16 @@ class controller extends model
                                 $email = $_REQUEST['email'];
                                 $data = $_REQUEST;
                                 $userdata =    $this->login($data);
-                                echo "<pre>";
-                                print_r($userdata);
-                                exit;
+                                // echo "<pre>";
+                                // print_r($userdata);
+                                // exit;
 
                                 // $data = $this->showwhere('users',$id);
-                                if($user_detail)
+                                // if($user_detail)
                                 {   
 
-                                    $_SESSION['user_id'] = $user_id;
-                                    setcookie ("email",$email,time()+ 3600);
+                                    // $_SESSION['user_id'] = $user_id;
+                                    // setcookie ("email",$email,time()+ 3600);
                                 }
 
                             }

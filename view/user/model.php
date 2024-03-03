@@ -98,11 +98,11 @@ public function login($data)
         if($userdata->role_as == 1)
         {
             // echo "Admin side";
-            // header("location:../admin/dashh");
+            header("location:../admin/dashh");
         }
         else
         {
-            // header("location:index");
+            header("location:index");
         }
     }
     else
