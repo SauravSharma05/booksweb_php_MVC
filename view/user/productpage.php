@@ -25,6 +25,7 @@
             <div class="card-body">
                 <h5 class="card-title"><?php echo $value->name ?></h5>
                 <p class="card-text"><?php echo $value->description ?></p>
+                <label for="quantity">quantity</label><input type="number" min="1" max="5" name="quantity" id="">
                 <form action="">
                     <button type="submit" name="adc" value="<?php echo $value->book_id ?>">add to cart</button>
                 </form>

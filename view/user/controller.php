@@ -73,12 +73,21 @@ class controller extends model
                         if(isset($_REQUEST['adc']))
                         {
                             $id = $_REQUEST['adc'];
-                            // echo $id;
-                            $data = $this->showwhere('books',$id);
-                            echo "<pre>";
-                            print_r($data);
-                            exit;
-                        }
+                           $data = $this->showwhere('books',$id);
+                            
+                            $quantity= $_REQUEST['quantity'];
+                            
+                                    $data = array(
+                                    "quantity" => $quantity,
+                                    "bool_id" => $id,
+                                );
+                                // $this->insert('adc',$data);
+                                // header('location:productpage');
+                            }
+                            // echo "<pre>";
+                            // print_r($data);
+                            // exit;
+                        
 
                         include 'productpage.php';
                         break;
