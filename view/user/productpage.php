@@ -15,9 +15,10 @@
 </head>
 <body>
 
-    <?php foreach ($data as $value) { 
-        ?>
+        <?php foreach ($data as $value) { 
+            ?>
     
+    <form action="" method="post">
     <div class="products">
 
         <div class="card" style="width: 18rem;border: 2px solid black;padding:5px;">
@@ -26,7 +27,6 @@
                 <h5 class="card-title"><?php echo $value->name ?></h5>
                 <p class="card-text"><?php echo $value->description ?></p>
                 <label for="quantity">quantity</label><input type="number" min="1" max="5" name="quantity" id="">
-                <form action="">
                     <button type="submit" name="adc" value="<?php echo $value->book_id ?>">add to cart</button>
                 </form>
             </div>

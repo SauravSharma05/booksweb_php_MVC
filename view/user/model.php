@@ -17,7 +17,9 @@ class model
 
             $sql  = "INSERT INTO $table ($arr1) VALUES ('$val1')";
             // echo $sql;
-            $this->connection->query($sql);
+            $res = $this->connection->query($sql);
+            return $res;    
+
         }
         public function show($table)
         {
@@ -93,7 +95,7 @@ public function login($data)
       $sqlex = $this->connection->query($SQL);
     if($sqlex->num_rows > 0)
     {
-        $userdata = $sqlex->fetch_object();
+          $userdata = $sqlex->fetch_object();
      
         if($userdata->role_as == 1)
         {

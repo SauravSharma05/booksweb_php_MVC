@@ -7,6 +7,7 @@ class controller extends model
     {
             $url = $_SERVER['PATH_INFO'];
             model::__construct();
+            session_start();
             switch ($url) 
             {
                     case '/index':           
@@ -71,23 +72,37 @@ class controller extends model
                         {
                             $id = $_REQUEST['adc'];
                            $data = $this->showwhere('books',$id);
-                            
+                           $price = $data[0]->price;
                             $quantity= $_REQUEST['quantity'];
+                            $user_id = $_SESSION['user_id'];
                             
-                                    $data = array(
+                                    $dataa = array(
                                     "quantity" => $quantity,
-                                    "bool_id" => $id,
+                                    "book_id" => $id,
+                                    "user_id" => $user_id,
+                                    "price" => $price,
                                 );
-                                // $this->insert('adc',$data);
-                                // header('location:productpage');
+                                $res = $this->insert('adc',$dataa);
+                                if($res)
+                                {
+                                    echo "<script> alert('added to cart successfully') </script>";
+                                    header('location:cartpage');
+                                }
+
+
                             }
-                            // echo "<pre>";
-                            // print_r($data);
-                            // exit;
-                        
 
                         include 'productpage.php';
                         break;
+                        
+                        case '/cartpage':
+                        //  include "header.php";
+                        
+                        $cartdata = $this->show('adc');
+                        include 'cartpage.php';
+                        break;
+
+                        
                  
             }
         }
