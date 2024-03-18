@@ -71,23 +71,46 @@ class controller extends model
                         if(isset($_REQUEST['adc']))
                         {
                             $id = $_REQUEST['adc'];
-                           $data = $this->showwhere('books',$id);
-                           $price = $data[0]->price;
+                            $data = $this->showwhere('books',$id);
+                            $price = $data[0]->price;
                             $quantity= $_REQUEST['quantity'];
                             $user_id = $_SESSION['user_id'];
+
                             
-                                    $dataa = array(
-                                    "quantity" => $quantity,
-                                    "book_id" => $id,
-                                    "user_id" => $user_id,
-                                    "price" => $price,
+                            
+                            $addtocartdata = $this->showwhere('adc',$id);
+                            $bookid = $addtocartdata[0]->book_id;
+                            $prdqty = $addtocartdata[0]->quantity;
+                            $userid = $data[0]->user_id;
+                            
+                            if($user_id == $userid && $id == $bookid)
+                            {
+                                $mainqty = $prdqty + $quantity; 
+
+                                $dataa = array(
+                                "quantity" => $mainqty,
+
                                 );
-                                $res = $this->insert('adc',$dataa);
-                                if($res)
-                                {
-                                    echo "<script> alert('added to cart successfully') </script>";
-                                    header('location:cartpage');
-                                }
+                                $this->update('adc',$dataa,$id);
+                            }
+                            else
+                            {
+
+                                $dataa = array(
+                                "quantity" => $quantity,
+                                "book_id" => $id,
+                                "user_id" => $user_id,
+                                "price" => $price,
+                            );
+                            $res = $this->insert('adc',$dataa);
+                            if($res)
+                            {
+                                echo "<script> alert('added to cart successfully') </script>";
+                                header('location:cartpage');
+                            }
+                            }
+
+
 
 
                             }
@@ -99,6 +122,13 @@ class controller extends model
                         //  include "header.php";
                         
                         $cartdata = $this->show('adc');
+                        if(isset($_REQUEST['del']))
+                        {
+                            $id = $_REQUEST['del'];
+                            $this->delete('adc',$id);
+                            header('location:cartpage');
+                            
+                        }
                         include 'cartpage.php';
                         break;
 

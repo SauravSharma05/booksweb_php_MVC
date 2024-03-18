@@ -60,7 +60,7 @@ class model
         public function delete($table, $id)
         {
             
-            $sql = "DELETE FROM $table WHERE id = $id";
+            $sql = "DELETE FROM $table WHERE book_id = $id";
             $this->connection->query($sql);
         }
         public function showwhere($table,$id)
@@ -84,7 +84,7 @@ class model
             $SQL .= " $key = '$value' , ";
         }
         $SQL = rtrim($SQL," , ");
-        $SQL .= " WHERE id = $id";
+        $SQL .= " WHERE book_id = $id";
         $sqlex = $this->connection->query($SQL);
 }
 public function login($data)
