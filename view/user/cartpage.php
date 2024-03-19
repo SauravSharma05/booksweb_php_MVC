@@ -17,6 +17,16 @@
 </head>
 
 <body>
+<?php 
+            
+            foreach($cartdata as $value)
+             {
+                    $price = $value->price;
+                    $quantity = $value->quantity;
+                    $subtotal = $price*$quantity;
+                    $arr[] = $subtotal;
+            }
+            ?>
     <h1><a href="index">HOME</a></h1>
 
     <table class="table">
@@ -49,14 +59,17 @@
 
         </tbody>
     </table>
+
+    <span>Total amount : <?php  echo (array_sum($arr));?></span>
     <button id="rzp-button1" style="height:30px; width:100px; color:white;background-color:black; margin-left:30px;">Pay</button>
 
+           
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         var options = {
             "key": "", // Enter the Key ID generated from the Dashboard
-            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": "<?php  echo (array_sum($arr));?>", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Acme Corp", //your business name
             "description": "Test Transaction",

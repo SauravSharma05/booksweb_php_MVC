@@ -109,10 +109,6 @@ class controller extends model
                                 header('location:cartpage');
                             }
                             }
-
-
-
-
                             }
 
                         include 'productpage.php';
