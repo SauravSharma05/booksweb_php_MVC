@@ -17,16 +17,15 @@
 </head>
 
 <body>
-<?php 
-            
-            foreach($cartdata as $value)
-             {
-                    $price = $value->price;
-                    $quantity = $value->quantity;
-                    $subtotal = $price*$quantity;
-                    $arr[] = $subtotal;
-            }
-            ?>
+    <?php
+
+    foreach ($cartdata as $value) {
+        $price = $value->price;
+        $quantity = $value->quantity;
+        $subtotal = $price * $quantity;
+        $arr[] = $subtotal;
+    }
+    ?>
     <h1><a href="index">HOME</a></h1>
 
     <table class="table">
@@ -60,16 +59,16 @@
         </tbody>
     </table>
 
-    <span>Total amount : <?php  echo (array_sum($arr));?></span>
+    <span>Total amount : <?php echo (array_sum($arr)); ?></span>
     <button id="rzp-button1" style="height:30px; width:100px; color:white;background-color:black; margin-left:30px;">Pay</button>
 
-           
+
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         var options = {
             "key": "", // Enter the Key ID generated from the Dashboard
-            "amount": "<?php  echo (array_sum($arr));?>", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "amount": "<?php echo (array_sum($arr)); ?>", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Acme Corp", //your business name
             "description": "Test Transaction",
@@ -89,13 +88,26 @@
             }
         };
 
-        
-        var rzp1 = new Razorpay(options);
-        document.getElementById('rzp-button1').onclick = function(e) {
-            rzp1.open();
-            e.preventDefault();
-        }
+        $.ajax({
+            type: "POST",
+            url:"Payment",
+            data:"pay_id="+response.razorpay_payment_id,
+
+            success:function(result)
+            {
+                window.location="success"
+            }
+        })
+
+
+                    var rzp1 = new Razorpay(options);
+                    document.getElementById('rzp-button1').onclick = function(e) {
+                        rzp1.open();
+                        e.preventDefault();
+                    }
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <button type="submit" name="checkout">check out</button> -->
 </body>
 

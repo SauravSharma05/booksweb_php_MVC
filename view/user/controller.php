@@ -128,6 +128,30 @@ class controller extends model
                         include 'cartpage.php';
                         break;
 
+
+                        case '/payment':
+                        
+                        if(isset($_POST['pay_id']))
+                        {
+                            $pay_id = $_POST['pay_id'];
+                            $dataa = array(
+                                "pay_id" => $pay_id,
+                            );
+
+                            $response = $this->insert('payment', $dataa);
+                            if($response)
+                            {
+                                echo "<script>payment done</script>";
+                            }
+                        }
+                        break;
+
+                        case '/success':
+                        
+                        
+                        include 'success.php';
+                        break;
+
                         
                  
             }
