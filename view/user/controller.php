@@ -131,11 +131,13 @@ class controller extends model
 
                         case '/payment':
                         
-                        if(isset($_POST['pay_id']))
+                        if(isset($_POST['pay_id']) && isset($_POST['amount']))
                         {
                             $pay_id = $_POST['pay_id'];
+                            $amount = $_POST['amount'];
                             $dataa = array(
                                 "pay_id" => $pay_id,
+                                "amount" => $amount,
                             );
 
                             $response = $this->insert('payment', $dataa);

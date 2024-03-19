@@ -87,11 +87,11 @@
                 "color": "#3399cc"
             }
         };
-
+        amount = <?php echo (array_sum($arr)); ?>
         $.ajax({
             type: "POST",
             url:"Payment",
-            data:"pay_id="+response.razorpay_payment_id,
+            data:"pay_id="+response.razorpay_payment_id+"&amount="+amount,
 
             success:function(result)
             {
