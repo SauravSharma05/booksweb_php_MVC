@@ -143,14 +143,15 @@ class controller extends model
                             $response = $this->insert('payment', $dataa);
                             if($response)
                             {
-                                echo "<script>payment done</script>";
+                                echo "<script>Alert('payment done')</script>";
                             }
                         }
                         break;
 
+
                         case '/success':
                         
-                        
+
                         include 'success.php';
                         break;
 
